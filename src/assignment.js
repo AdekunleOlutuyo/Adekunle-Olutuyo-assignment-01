@@ -16,11 +16,15 @@ const assignment = {};
  */
 function sumOfNumbersTo(destination) {
     let sum = 0;
-    return sum
-}
-
-
-// assignment.sumOfNumbersTo = sumOfNumbersTo;
+    for (let k = 1; k <= destination; ++k) {
+        sum += k;
+    }
+    return sum;
+  }
+  console.log(sumOfNumbersTo(100))
+  
+  assignment.sumOfNumbersTo = sumOfNumbersTo;
+  
 
 /**
  * Challenge - 2
@@ -33,23 +37,29 @@ function sumOfNumbersTo(destination) {
  * @returns the object containing count, sum, arrayOfEvenNumbers from 1 to destination
  */
 function countEvenNumbersWithin(destination) {
-    // Write your code here
-    // get the number from 1 to destination
     let sum = 0;
     let count = 0;
     let arrayOfEvenNumbers = [];
-
+  
+    for (let e = 1; e <= destination; e++) {
+        if (e % 2 === 0) {
+            count++;
+            sum += e;
+            arrayOfEvenNumbers.push(e);
+        }
+    }
+    
+  
     return {
-        // property value shorthand
-        // when the property name and the value name are the same
-        // you can just write the property name in your object
-        count,
-        sum,
-        arrayOfEvenNumbers
+        count: count,
+        sum: sum,
+        arrayOfEvenNumbers: arrayOfEvenNumbers
     };
-}
-
-// assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+  }
+  
+  console.log(countEvenNumbersWithin(10));
+  
+  assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
 /**
  * Challenge - 3
